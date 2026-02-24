@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeBlocks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Unbounded:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header class="header">
+    <div class="logo"><span class="bracket">{</span> CodeBlocks <span class="bracket">}</span></div>
+    <div class="header-btns">
+      <button id="run-btn">▶ Запустить</button>
+      <button id="clear-btn">✕ Очистить</button>
+    </div>
+  </header>
+
+  <!-- ОСНОВНОЙ LAYOUT -->
+  <div class="app">
+
+    <!-- ЛЕВАЯ КОЛОНКА: палитра блоков -->
+    <aside class="palette">
+      <p class="col-title">Блоки</p>
+
+      <p class="group-label">Переменные</p>
+      <div class="palette-block" draggable="true" data-type="declare">📦 Объявить</div>
+      <div class="palette-block" draggable="true" data-type="assign">✏️ Присвоить</div>
+
+      <p class="group-label">Управление</p>
+      <div class="palette-block" draggable="true" data-type="if">🔀 Если (if)</div>
+
+      <p class="group-label">Вывод</p>
+      <div class="palette-block" draggable="true" data-type="print">🖨️ Вывести</div>
+
+      <p class="hint">💡 Перетащи блок<br>в рабочую область</p>
+    </aside>
+
+    <!-- ЦЕНТРАЛЬНАЯ КОЛОНКА: рабочая область -->
+    <main class="workspace">
+      <div class="ws-block ws-block--start">🟢 Начало программы</div>
+
+      <!-- Сюда сокурсники будут добавлять блоки через JS -->
+      <div id="drop-zone" class="drop-zone">
+        <span class="drop-hint">↓ Перетащи блоки сюда ↓</span>
+      </div>
+
+      <div class="ws-block ws-block--end">🔴 Конец программы</div>
+    </main>
+
+    <!-- ПРАВАЯ КОЛОНКА: переменные и вывод -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <p class="col-title">Переменные</p>
+        <div id="vars-display">
+          <p class="empty-text">Переменных нет</p>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="col-title">Вывод</p>
+        <div id="output">
+          <p class="empty-text">Нажми "Запустить"...</p>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <script src="main2.js"></script>
+</body>
+</html>
